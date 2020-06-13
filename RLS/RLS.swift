@@ -7,9 +7,24 @@
 //
 
 import Foundation
+import Alamofire
 
 public class RLS {
-    public func log() {
+    
+    public func log(content: String, type: LogType) throws {
         print("log...")
+        
+        let appToken: String? = Bundle.main.object(forInfoDictionaryKey: "RLSAppToken") as? String
+        
+        guard let _ = appToken else {
+            throw RLSError.appToken("App token not found")
+        }
+        
+        let apiManager = ApiManager()
+        apiManager.log(content: content, type: type, appToken: appToken!)
     }
+}
+
+enum RLSError: Error {
+    case appToken(String)
 }
