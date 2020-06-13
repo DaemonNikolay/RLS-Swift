@@ -20,13 +20,13 @@ internal class ApiManager {
         headers.add(name: "Authorization", value: "Bearer \(appToken)")
         
         let params: Parameters = [
-            "content": content,
-            "type": type,
-            "appToken": appToken
+            "content": "\(content)",
+            "type": "\(type)",
+            "appToken": "\(appToken)"
         ]
         
         networkManager.request(urlTo: ApiUrl, headers: headers, parameters: params, method: .post)
-            .validate(statusCode: 200..<300)
+            .validate()
             .responseJSON { response in
                 
                 print(response.response?.statusCode)
