@@ -4,12 +4,11 @@ Pod::Spec.new do |spec|
   spec.version      = "0.0.1"
   spec.summary      = "Remote Loging System"
 
-  spec.description  = <<-DESC
-                   DESC
+  spec.description  = "RLS description"
 
   spec.homepage     = "https://github.com/DaemonNikolay/RLS-Swift"
 
-  spec.license      = "MIT (example)"
+  spec.license      = "MIT"
 
   spec.author             = { "Nikolay Eckert" => "nikolay-eckert@yandex.ru" }
 
