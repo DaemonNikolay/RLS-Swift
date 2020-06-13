@@ -16,16 +16,13 @@ internal class ApiManager {
         print("323232")
         let networkManager = NetworkManager()
         
-        var headers: HTTPHeaders = HTTPHeaders()
-        headers.add(name: "Authorization", value: "Bearer \(appToken)")
-        
         let params: Parameters = [
             "content": "\(content)",
             "type": "\(type)",
             "appToken": "\(appToken)"
         ]
         
-        networkManager.request(urlTo: ApiUrl, headers: headers, parameters: params, method: .post)
+        networkManager.request(urlTo: ApiUrl, headers: nil, parameters: nil, method: .post)
             .validate()
             .responseJSON { response in
                 
