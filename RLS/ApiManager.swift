@@ -22,12 +22,9 @@ internal class ApiManager {
             "appToken": "\(appToken)"
         ]
         
-        networkManager.request(urlTo: ApiUrl, headers: nil, parameters: nil, method: .post)
+        networkManager.request(urlTo: ApiUrl, headers: nil, parameters: ["ds": "432vg"], method: .post)
             .validate()
             .responseJSON { response in
-                
-                print(response.response?.statusCode)
-                
                 switch response.result {
                 case .success(let value):
                     if let json = value as? [String: Any] {
