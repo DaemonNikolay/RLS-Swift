@@ -15,20 +15,15 @@ public class RLS {
         
     }
     
-    public func log(content: String, type: LogType) throws {
+    public func log(content: String, type: LogType, appToken: String) {
         print("log...")
         
-        let appToken: String? = Bundle.main.object(forInfoDictionaryKey: "RLSAppToken") as? String
-        
-        guard appToken == nil else {
-            throw RLSError.appToken("App token not found")
-        }
-        
         let apiManager = ApiManager()
-        apiManager.log(content: content, type: type, appToken: appToken!)
+        apiManager.log(content: content, type: type, appToken: appToken)
     }
 }
 
 public enum RLSError: Error {
     case appToken(String)
+    case content(String)
 }
