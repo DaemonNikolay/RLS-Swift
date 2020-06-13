@@ -20,7 +20,7 @@ public class RLS {
         
         let appToken: String? = Bundle.main.object(forInfoDictionaryKey: "RLSAppToken") as? String
         
-        guard let _ = appToken else {
+        guard appToken == nil else {
             throw RLSError.appToken("App token not found")
         }
         

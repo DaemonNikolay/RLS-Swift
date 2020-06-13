@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RLS"
-  spec.version      = "1.0.5"
+  spec.version      = "1.0.6"
   spec.summary      = "Remote Loging System"
 
   spec.description  = "RLS description"
