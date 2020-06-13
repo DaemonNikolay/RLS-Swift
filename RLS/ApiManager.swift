@@ -25,6 +25,7 @@ internal class ApiManager {
         ]
         
         networkManager.request(urlTo: ApiUrl, headers: headers, parameters: params, method: .post)
+            .validate()
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
