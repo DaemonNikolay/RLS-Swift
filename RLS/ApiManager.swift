@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 internal class ApiManager {
-    private let ApiUrl:String = "https://localhost:5700"
+    private let ApiUrl:String = "https://localhost:5001/api/log/new"
     
     internal func log(content: String, type: LogType, appToken: String) {
         print("323232")
