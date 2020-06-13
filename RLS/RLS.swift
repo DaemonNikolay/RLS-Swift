@@ -29,6 +29,6 @@ public class RLS {
     }
 }
 
-enum RLSError: Error {
+public enum RLSError: Error {
     case appToken(String)
 }
