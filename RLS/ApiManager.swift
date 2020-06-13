@@ -25,8 +25,11 @@ internal class ApiManager {
         ]
         
         networkManager.request(urlTo: ApiUrl, headers: headers, parameters: params, method: .post)
-            .validate()
+            .validate(statusCode: 200..<300)
             .responseJSON { response in
+                
+                print(response.response?.statusCode)
+                
                 switch response.result {
                 case .success(let value):
                     if let json = value as? [String: Any] {
