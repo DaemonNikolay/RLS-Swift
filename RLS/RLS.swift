@@ -16,7 +16,7 @@ public class RLS {
     }
     
     public func log(content: String, type: LogType, appToken: String) {
-        print("log...")
+        print("log...1")
         
         let apiManager = ApiManager()
         apiManager.log(content: content, type: type, appToken: appToken)

@@ -13,6 +13,7 @@ internal class ApiManager {
     private let ApiUrl:String = "https://localhost:5700"
     
     internal func log(content: String, type: LogType, appToken: String) {
+        print("323232")
         let networkManager = NetworkManager()
         
         var headers: HTTPHeaders = HTTPHeaders()
