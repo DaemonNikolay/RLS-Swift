@@ -16,13 +16,13 @@ internal class ApiManager {
         print("323232")
         let networkManager = NetworkManager()
         
-        let params: Parameters = [
+        let params: [String : Any?] = [
             "content": "\(content)",
             "type": "\(type)",
             "appToken": "\(appToken)"
         ]
         
-        networkManager.request(urlTo: ApiUrl, headers: nil, parameters: ["ds": "432vg"], method: .post)
+        networkManager.request(urlTo: ApiUrl, headers: nil, parameters: params as Parameters, method: .post)
             .validate()
             .responseJSON { response in
                 switch response.result {
