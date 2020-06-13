@@ -11,6 +11,10 @@ import Alamofire
 
 public class RLS {
     
+    public init() {
+        
+    }
+    
     public func log(content: String, type: LogType) throws {
         print("log...")
         
